@@ -7,6 +7,7 @@ import Icon from './components/Icon'
 import Window from './components/Window'
 
 import classes from './index.module.css'
+import Skills from './components/Skills'
 
 const font = Roboto_Mono({ subsets: ['latin'] })
 
@@ -18,7 +19,8 @@ const Home = () => {
 			iconSrc: '/icons/me.svg',
 			initialTop: 0,
 			initialLeft: 0,
-			open: false
+			open: false,
+			Component: null
 		},
 		{
 			id: 'EXPERIENCE',
@@ -26,7 +28,8 @@ const Home = () => {
 			headerTitle: 'Experience',
 			initialTop: 0,
 			initialLeft: 0,
-			open: false
+			open: false,
+			Component: null
 		},
 		{
 			id: 'SKILLS',
@@ -34,7 +37,8 @@ const Home = () => {
 			headerTitle: 'Skills',
 			initialTop: 0,
 			initialLeft: 0,
-			open: false
+			open: false,
+			Component: <Skills />
 		},
 		{
 			id: 'SOCIALS',
@@ -42,7 +46,8 @@ const Home = () => {
 			headerTitle: 'Socials',
 			initialTop: 0,
 			initialLeft: 0,
-			open: false
+			open: false,
+			Component: null
 		},
 	])
 
@@ -96,7 +101,7 @@ const Home = () => {
 						return <Icon key={id} index={index} src={iconSrc} alt={headerTitle} name={headerTitle} onClick={openWindow} />
 					})}
 				</section>
-				{windows.map(({id, headerTitle, initialTop, initialLeft, open}, index) => {
+				{windows.map(({id, headerTitle, initialTop, initialLeft, open, Component}, index) => {
 					if (open) {
 						return (
 							<Window 
@@ -108,7 +113,9 @@ const Home = () => {
 								focused={focused === id}
 								onClick={openWindow}
 								onClose={closeWindow}
-							/>
+							>
+								{Component}
+							</Window>
 						)
 					}
 

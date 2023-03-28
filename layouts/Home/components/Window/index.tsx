@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { ReactNode, useEffect, useRef, useState } from 'react'
 
 import classes from './index.module.css'
 
@@ -10,10 +10,11 @@ type TWindowProps = {
 	focused: boolean,
 	onClick: (index: number) => void
 	onClose: (index: number) => void
+	children: ReactNode
 }
 
 const Window: React.FC<TWindowProps> = (props) => {
-	const { headerTitle, initialTop, initialLeft, index, focused, onClick, onClose } = props
+	const { headerTitle, initialTop, initialLeft, index, focused, onClick, onClose, children } = props
 
 	const [top, setTop] = useState<number>(initialTop)
 	const [left, setLeft] = useState<number>(initialLeft)
@@ -97,6 +98,7 @@ const Window: React.FC<TWindowProps> = (props) => {
 				<p className={classes.headerTitle}>{headerTitle}</p>
 				<button onClick={() => {onClose(index)}} className={classes.closeButton} />
 			</header>
+			{children}
 		</article>
 	)
 }

@@ -1,0 +1,25 @@
+.container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+}
+
+.level {
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.skills {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.skill {
+  padding: 4px;
+  font-size: 10px;
+  font-weight: 800;
+  border-radius: 1.1rem;
+}
