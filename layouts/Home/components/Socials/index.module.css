@@ -1,0 +1,24 @@
+.container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+}
+
+.mailSection {
+  display: flex;
+  align-items: center;
+}
+
+.mail {
+  font-weight: 500;
+  font-size: 1.8rem;
+  margin-left: 1rem;
+}
+
+.linksSection {
+  margin-top: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

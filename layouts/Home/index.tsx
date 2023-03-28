@@ -5,9 +5,10 @@ import { Roboto_Mono } from 'next/font/google'
 
 import Icon from './components/Icon'
 import Window from './components/Window'
+import Skills from './components/Skills'
+import Socials from './components/Socials'
 
 import classes from './index.module.css'
-import Skills from './components/Skills'
 
 const font = Roboto_Mono({ subsets: ['latin'] })
 
@@ -20,7 +21,9 @@ const Home = () => {
 			initialTop: 0,
 			initialLeft: 0,
 			open: false,
-			Component: null
+			Component: null,
+			height: 600,
+			width: 300
 		},
 		{
 			id: 'EXPERIENCE',
@@ -29,7 +32,9 @@ const Home = () => {
 			initialTop: 0,
 			initialLeft: 0,
 			open: false,
-			Component: null
+			Component: null,
+			height: 600,
+			width: 300
 		},
 		{
 			id: 'SKILLS',
@@ -38,7 +43,9 @@ const Home = () => {
 			initialTop: 0,
 			initialLeft: 0,
 			open: false,
-			Component: <Skills />
+			Component: <Skills />,
+			height: 600,
+			width: 300
 		},
 		{
 			id: 'SOCIALS',
@@ -47,7 +54,9 @@ const Home = () => {
 			initialTop: 0,
 			initialLeft: 0,
 			open: false,
-			Component: null
+			Component: <Socials />,
+			height: 200,
+			width: 300
 		},
 	])
 
@@ -65,8 +74,8 @@ const Home = () => {
 		newWindows[index] = {
 			...newWindows[index],
 			open: true,
-			initialTop: windows[index].open ? windows[index].initialTop : Math.floor(Math.random() * (window.innerHeight - 601)),
-			initialLeft: windows[index].open ? windows[index].initialLeft : Math.floor(Math.random() * (window.innerWidth - 301))
+			initialTop: windows[index].open ? windows[index].initialTop : Math.floor(Math.random() * (window.innerHeight - windows[index].height + 1)),
+			initialLeft: windows[index].open ? windows[index].initialLeft : Math.floor(Math.random() * (window.innerWidth - windows[index].width + 1))
 		}
 
 		setWindows(newWindows)
@@ -101,7 +110,7 @@ const Home = () => {
 						return <Icon key={id} index={index} src={iconSrc} alt={headerTitle} name={headerTitle} onClick={openWindow} />
 					})}
 				</section>
-				{windows.map(({id, headerTitle, initialTop, initialLeft, open, Component}, index) => {
+				{windows.map(({id, headerTitle, initialTop, initialLeft, open, Component, height, width}, index) => {
 					if (open) {
 						return (
 							<Window 
@@ -111,6 +120,8 @@ const Home = () => {
 								initialLeft={initialLeft}  
 								index={index}
 								focused={focused === id}
+								height={height}
+								width={width}
 								onClick={openWindow}
 								onClose={closeWindow}
 							>

@@ -10,11 +10,13 @@ type TWindowProps = {
 	focused: boolean,
 	onClick: (index: number) => void
 	onClose: (index: number) => void
-	children: ReactNode
+	children: ReactNode,
+	height: number,
+	width: number
 }
 
 const Window: React.FC<TWindowProps> = (props) => {
-	const { headerTitle, initialTop, initialLeft, index, focused, onClick, onClose, children } = props
+	const { headerTitle, initialTop, initialLeft, index, focused, onClick, onClose, children, height, width } = props
 
 	const [top, setTop] = useState<number>(initialTop)
 	const [left, setLeft] = useState<number>(initialLeft)
@@ -91,7 +93,9 @@ const Window: React.FC<TWindowProps> = (props) => {
 				top: `${top}px`,
 				left: `${left}px`,
 				boxShadow: focused  ? '1rem 1rem 0px var(--black)' : '',
-				zIndex: focused ? 1 : 0
+				zIndex: focused ? 1 : 0,
+				height,
+				width
 			}}
 		>
 			<header onMouseDown={onHeaderDrag} className={classes.header}>
