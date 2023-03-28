@@ -19,6 +19,7 @@
       "pages/*": ["pages/*"],
       "public/*": ["public/*"],
       "styles/*": ["styles/*"],
+      "layouts/*": ["layouts/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
