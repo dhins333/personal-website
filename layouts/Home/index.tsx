@@ -3,7 +3,8 @@ import Head from 'next/head'
 import clsx from 'clsx'
 import { Roboto_Mono } from 'next/font/google'
 
-import Window from './components/Window'
+import Icon from './components/Icon'
+// import Window from './components/Window'
 
 import classes from './index.module.css'
 
@@ -19,7 +20,13 @@ const Home = () => {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main className={clsx(classes.mainContainer, font.className)}>
-				<Window headerTitle="Me" initialTop={150} initialLeft={50} />
+				<section className={classes.iconsSection}>
+					<Icon src="/icons/me.svg" alt="me" name="Me" />
+					<Icon src="/icons/experience.svg" alt="experience" name="Experience" />
+					<Icon src="/icons/skills.svg" alt="skills" name="Skills" />
+					<Icon src="/icons/socials.svg" alt="socials" name="Socials" />
+				</section>
+				{/* <Window headerTitle="Me" initialTop={150} initialLeft={50} /> */}
 			</main>
 		</>
 	)

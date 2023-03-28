@@ -7,3 +7,10 @@
   position: relative;
   overflow: hidden;
 }
+
+.iconsSection {
+  margin-top: 3.2rem;
+  margin-left: 4.7rem;
+  display: flex;
+  gap: 2.5rem;
+}

@@ -2,13 +2,13 @@ import React, { useRef, useState } from 'react'
 
 import classes from './index.module.css'
 
-type WindowProps = {
+type TWindowProps = {
   headerTitle: string,
   initialTop: number,
   initialLeft: number
 }
 
-const Window: React.FC<WindowProps> = (props) => {
+const Window: React.FC<TWindowProps> = (props) => {
 	const { headerTitle, initialTop, initialLeft } = props
 
 	const [top, setTop] = useState<number>(initialTop)
