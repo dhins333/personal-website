@@ -63,7 +63,18 @@ const Home = () => {
 	const [focused, setFocused] = useState<null | string>(null)
 
 	useEffect(() => {
-		openWindow(0)
+		setWindows((windowsData) => {
+			const newWindows = [...windowsData]
+
+			newWindows[0] = {
+				...newWindows[0],
+				open: true,
+				initialTop: windowsData[0].open ? windowsData[0].initialTop : Math.floor(Math.random() * (window.innerHeight - windowsData[0].height + 1)),
+				initialLeft: windowsData[0].open ? windowsData[0].initialLeft : Math.floor(Math.random() * (window.innerWidth - windowsData[0].width + 1))
+			}
+
+			return newWindows
+		})
 	}, [])
 
 	const openWindow = (index: number) => {

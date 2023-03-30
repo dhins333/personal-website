@@ -39,7 +39,7 @@ const Window: React.FC<TWindowProps> = (props) => {
 		return () => {
 			observer.disconnect()
 		}
-	}, [windowRef.current, index])
+	}, [index, onClose])
 
 	useEffect(() => {
 		return () => {
