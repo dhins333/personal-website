@@ -9,8 +9,18 @@
 }
 
 .iconsSection {
-  margin-top: 3.2rem;
-  margin-left: 4.7rem;
+  padding-top: 3.2rem;
+  padding-left: 4.7rem;
   display: flex;
   gap: 2.5rem;
+}
+
+@media (max-width: 480px) {
+  .iconsSection {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
 }

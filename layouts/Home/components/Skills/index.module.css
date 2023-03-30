@@ -23,3 +23,10 @@
   font-weight: 800;
   border-radius: 1.1rem;
 }
+
+@media (max-width: 480px) {
+  .skill {
+    font-size: 1.2rem;
+    border-radius: 1.2rem;
+  }
+}
