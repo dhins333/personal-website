@@ -58,7 +58,7 @@ const Home = () => {
 			Component: <Socials />,
 			height: 200,
 			width: 300
-		},
+		}
 	])
 
 	const [focused, setFocused] = useState<null | string>(null)
@@ -81,7 +81,7 @@ const Home = () => {
 	}, [])
 
 	const openWindow = (index: number) => {
-		if (windows[index].id === focused && windows[index].open) return
+		if (index === 4 || windows[index].id === focused && windows[index].open) return
 
 		const newWindows = [...windows]
 
@@ -123,6 +123,9 @@ const Home = () => {
 					{windows.map(({ headerTitle, iconSrc, id }, index) => {
 						return <Icon key={id} index={index} src={iconSrc} alt={headerTitle} name={headerTitle} onClick={openWindow} />
 					})}
+					<a href="#" className={classes.resume}>
+						<Icon index={4} src="/icons/resume.svg" alt="Resume" name="Resume" onClick={openWindow}  />
+					</a>
 				</section>
 				{windows.map(({id, headerTitle, initialTop, initialLeft, open, Component, height, width}, index) => {
 					if (open) {

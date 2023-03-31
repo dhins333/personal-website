@@ -15,7 +15,11 @@
   gap: 2.5rem;
 }
 
-@media (max-width: 480px) {
+.resume {
+  text-decoration: none;
+}
+
+@media (max-width: 550px) {
   .iconsSection {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
