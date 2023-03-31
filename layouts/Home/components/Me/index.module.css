@@ -1,0 +1,46 @@
+.container {
+  padding: 3rem
+}
+
+.title {
+  font-weight: 700;
+  font-size: 3.2rem;
+  color: var(--red);
+  text-align: center;
+}
+
+.content {
+  margin-top: 4rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+}
+
+.highlight {
+  color: var(--red);
+}
+
+.resume {
+  color: var(--red);
+  text-decoration: none;
+}
+
+.ps {
+  margin-top: 2.5rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 4rem;
+  }
+
+  .content {
+    font-size: 1.8rem;
+    line-height: 3rem;
+  }
+
+  .ps {
+    display: none;
+  }
+}

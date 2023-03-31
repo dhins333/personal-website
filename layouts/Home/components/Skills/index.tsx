@@ -126,7 +126,7 @@ const Skills = () => {
 					color: '#ff9a00'
 				},
 				{
-					name: 'SEO',
+					name: 'Figma',
 					color: '#000000'
 				},
 			]

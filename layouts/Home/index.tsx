@@ -7,6 +7,7 @@ import Icon from './components/Icon'
 import Window from './components/Window'
 import Skills from './components/Skills'
 import Socials from './components/Socials'
+import Me from './components/Me'
 
 import classes from './index.module.css'
 
@@ -21,8 +22,8 @@ const Home = () => {
 			initialTop: 0,
 			initialLeft: 0,
 			open: false,
-			Component: null,
-			height: 600,
+			Component: <Me />,
+			height: 450,
 			width: 300
 		},
 		{
@@ -44,7 +45,7 @@ const Home = () => {
 			initialLeft: 0,
 			open: false,
 			Component: <Skills />,
-			height: 600,
+			height: 550,
 			width: 300
 		},
 		{
@@ -63,18 +64,20 @@ const Home = () => {
 	const [focused, setFocused] = useState<null | string>(null)
 
 	useEffect(() => {
-		setWindows((windowsData) => {
-			const newWindows = [...windowsData]
-
-			newWindows[0] = {
-				...newWindows[0],
-				open: true,
-				initialTop: windowsData[0].open ? windowsData[0].initialTop : Math.floor(Math.random() * (window.innerHeight - windowsData[0].height + 1)),
-				initialLeft: windowsData[0].open ? windowsData[0].initialLeft : Math.floor(Math.random() * (window.innerWidth - windowsData[0].width + 1))
-			}
-
-			return newWindows
-		})
+		if (window.innerWidth > 480) {
+			setWindows((windowsData) => {
+				const newWindows = [...windowsData]
+	
+				newWindows[0] = {
+					...newWindows[0],
+					open: true,
+					initialTop: windowsData[0].open ? windowsData[0].initialTop : Math.floor(Math.random() * ((window.innerHeight - windowsData[0].height) - 146) + 146),
+					initialLeft: windowsData[0].open ? windowsData[0].initialLeft : Math.floor(Math.random() * (window.innerWidth - windowsData[0].width + 1))
+				}
+	
+				return newWindows
+			})
+		}
 	}, [])
 
 	const openWindow = (index: number) => {
@@ -85,7 +88,7 @@ const Home = () => {
 		newWindows[index] = {
 			...newWindows[index],
 			open: true,
-			initialTop: windows[index].open ? windows[index].initialTop : Math.floor(Math.random() * (window.innerHeight - windows[index].height + 1)),
+			initialTop: windows[index].open ? windows[index].initialTop : Math.floor(Math.random() * ((window.innerHeight - windows[index].height) - 146) + 146),
 			initialLeft: windows[index].open ? windows[index].initialLeft : Math.floor(Math.random() * (window.innerWidth - windows[index].width + 1))
 		}
 
