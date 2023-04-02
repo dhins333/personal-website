@@ -88,7 +88,7 @@ const Skills = () => {
 					color: '#2496ed'
 				},
 				{
-					name: 'Gitlab CI',
+					name: 'Gitlab CI/CD',
 					color: '#2496ed'
 				},
 				{
@@ -110,6 +110,14 @@ const Skills = () => {
 				{
 					name: 'Workbox',
 					color: '#616161'
+				},
+				{
+					name: 'Jest',
+					color: '#99425c'
+				},
+				{
+					name: 'Cypress',
+					color: '#000000'
 				}
 			]
 		},

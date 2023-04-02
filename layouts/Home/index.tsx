@@ -56,7 +56,7 @@ const Home = () => {
 			initialLeft: 0,
 			open: false,
 			Component: <Socials />,
-			height: 200,
+			height: 220,
 			width: 300
 		}
 	])
@@ -77,6 +77,8 @@ const Home = () => {
 	
 				return newWindows
 			})
+
+			setFocused('ME')
 		}
 	}, [])
 
@@ -103,7 +105,7 @@ const Home = () => {
 			...newWindows[index],
 			open: false,
 			initialTop: 0,
-			initialLeft: 0
+			initialLeft: 0,
 		}
 
 		setWindows(newWindows)
@@ -123,7 +125,7 @@ const Home = () => {
 					{windows.map(({ headerTitle, iconSrc, id }, index) => {
 						return <Icon key={id} index={index} src={iconSrc} alt={headerTitle} name={headerTitle} onClick={openWindow} />
 					})}
-					<a href="#" className={classes.resume}>
+					<a href="#" >
 						<Icon index={4} src="/icons/resume.svg" alt="Resume" name="Resume" onClick={openWindow}  />
 					</a>
 				</section>

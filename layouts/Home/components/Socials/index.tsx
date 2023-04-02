@@ -11,14 +11,13 @@ const Socials = () => {
 				<p className={classes.mail}>dhins333@gmail.com</p>
 			</section>
 			<section className={classes.linksSection}>
-				<a target="_blank" href="https://www.linkedin.com/in/dhinesh-kumar-s-4aaba31b8/" rel="noreferrer">
-					<Image src="/logos/linkedin.svg" alt="email" width={50} height={50} />
-				</a>
-				<a target="_blank" href="https://github.com/dhins333" rel="noreferrer">
+				<a target="_blank" href="https://github.com/dhins333" rel="noreferrer" className={classes.link}>
 					<Image src="/logos/github.svg" alt="email" width={50} height={50} />
+					<p className={classes.linkLabel}>Github</p>
 				</a>
-				<a target="_blank" href="https://steamcommunity.com/id/dhins" rel="noreferrer">
+				<a target="_blank" href="https://steamcommunity.com/id/dhins" rel="noreferrer" className={classes.link}>
 					<Image src="/logos/steam.svg" alt="email" width={50} height={50} />
+					<p className={classes.linkLabel}>Steam</p>
 				</a>
 			</section>
 		</main>
