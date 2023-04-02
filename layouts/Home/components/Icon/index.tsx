@@ -16,10 +16,10 @@ const Icon:React.FC<TIconProps> = (props) => {
 	const { index, src, name, alt, onClick } = props
 
 	return (
-		<article onClick={() => {onClick(index)}} className={classes.container}>
+		<div onClick={() => {onClick(index)}} className={classes.container}>
 			<Image draggable={false} src={src} alt={alt} height={75} width={75} />
 			<p className={classes.name}>{name}</p>
-		</article>
+		</div>
 	)
 }
 

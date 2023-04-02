@@ -8,6 +8,7 @@ import Window from './components/Window'
 import Skills from './components/Skills'
 import Socials from './components/Socials'
 import Me from './components/Me'
+import Experience from './components/Experience'
 
 import classes from './index.module.css'
 
@@ -33,9 +34,9 @@ const Home = () => {
 			initialTop: 0,
 			initialLeft: 0,
 			open: false,
-			Component: null,
-			height: 600,
-			width: 300
+			Component: <Experience />,
+			height: 400,
+			width: 450
 		},
 		{
 			id: 'SKILLS',
@@ -125,7 +126,7 @@ const Home = () => {
 					{windows.map(({ headerTitle, iconSrc, id }, index) => {
 						return <Icon key={id} index={index} src={iconSrc} alt={headerTitle} name={headerTitle} onClick={openWindow} />
 					})}
-					<a href="#" >
+					<a href="/resume.pdf" target="_blank" >
 						<Icon index={4} src="/icons/resume.svg" alt="Resume" name="Resume" onClick={openWindow}  />
 					</a>
 				</section>
