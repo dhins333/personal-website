@@ -131,7 +131,7 @@ const Window: React.FC<TWindowProps> = (props) => {
 		>
 			<header onMouseDown={onHeaderDrag} onTouchStart={onHeaderDrag} className={classes.header}>
 				<p className={classes.headerTitle}>{headerTitle}</p>
-				<button onClick={() => {onClose(index)}} className={classes.closeButton} />
+				<button onClick={() => {onClose(index)}} className={classes.closeButton} aria-label="Close Button" />
 			</header>
 			{children}
 		</article>
