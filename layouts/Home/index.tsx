@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Head from 'next/head'
-import clsx from 'clsx'
-import { Roboto_Mono } from 'next/font/google'
 
 import Icon from './components/Icon'
 import Window from './components/Window'
@@ -11,8 +8,6 @@ import Me from './components/Me'
 import Experience from './components/Experience'
 
 import classes from './index.module.css'
-
-const font = Roboto_Mono({ subsets: ['latin'] })
 
 const Home = () => {
 	const [windows, setWindows] = useState([
@@ -114,46 +109,38 @@ const Home = () => {
 	}
 
 	return (
-		<>
-			<Head>
-				<title>Dhins333</title>
-				<meta name="description" content="Dhins333 Personal Website" />
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
-			<main className={clsx(classes.mainContainer, font.className)}>
-				<section className={classes.iconsSection}>
-					{windows.map(({ headerTitle, iconSrc, id }, index) => {
-						return <Icon key={id} index={index} src={iconSrc} alt={headerTitle} name={headerTitle} onClick={openWindow} />
-					})}
-					<a href="/resume.pdf" target="_blank" >
-						<Icon index={4} src="/icons/resume.svg" alt="Resume" name="Resume" onClick={openWindow}  />
-					</a>
-				</section>
-				{windows.map(({id, headerTitle, initialTop, initialLeft, open, Component, height, width}, index) => {
-					if (open) {
-						return (
-							<Window 
-								key={id} 
-								headerTitle={headerTitle} 
-								initialTop={initialTop} 
-								initialLeft={initialLeft}  
-								index={index}
-								focused={focused === id}
-								height={height}
-								width={width}
-								onClick={openWindow}
-								onClose={closeWindow}
-							>
-								{Component}
-							</Window>
-						)
-					}
-
-					return null
+		<main className={classes.mainContainer}>
+			<section className={classes.iconsSection}>
+				{windows.map(({ headerTitle, iconSrc, id }, index) => {
+					return <Icon key={id} index={index} src={iconSrc} alt={headerTitle} name={headerTitle} onClick={openWindow} />
 				})}
-			</main>
-		</>
+				<a href="/resume.pdf" target="_blank" >
+					<Icon index={4} src="/icons/resume.svg" alt="Resume" name="Resume" onClick={openWindow}  />
+				</a>
+			</section>
+			{windows.map(({id, headerTitle, initialTop, initialLeft, open, Component, height, width}, index) => {
+				if (open) {
+					return (
+						<Window 
+							key={id} 
+							headerTitle={headerTitle} 
+							initialTop={initialTop} 
+							initialLeft={initialLeft}  
+							index={index}
+							focused={focused === id}
+							height={height}
+							width={width}
+							onClick={openWindow}
+							onClose={closeWindow}
+						>
+							{Component}
+						</Window>
+					)
+				}
+
+				return null
+			})}
+		</main>
 	)
 }
 
