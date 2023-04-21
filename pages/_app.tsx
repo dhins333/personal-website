@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import { Roboto_Mono } from 'next/font/google'
+import{ Analytics } from'@vercel/analytics/react'
 
 import type { AppProps } from 'next/app'
 
@@ -23,6 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
 			</Head>
 			<div className={font.className}>
 				<Component {...pageProps} />
+				<Analytics />
 			</div>
 		</>
 	)
