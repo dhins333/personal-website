@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Home from 'layouts/Home'
+import Parking from 'layouts/Parking'
 
-const HomePage = () => <Home />
+const HomePage = () => <Parking />
 
 export default HomePage
